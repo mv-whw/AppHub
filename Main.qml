@@ -16,6 +16,6 @@ Window {
         MyProgressBar{progresValue: 100; width: 300; detailsText: ""}
 
     }
-    MyMessageDialog{id: d;dialogTitleText: "testna"; dialogType: "info";messageText: "to je moj testing tekst ki se mora deliti na vec delov in pofka"; width: 200;isOkVisible: true}
+    MyMessageDialog{id: d;dialogTitleText: "testna"; dialogType: "info";messageText: "to je moj testing tekst ki se se mora preh dhio hida"; width: 200;isOkVisible: true}
 
 }

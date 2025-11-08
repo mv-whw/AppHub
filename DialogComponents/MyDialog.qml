@@ -120,4 +120,13 @@ Popup {
         }
     }
     height: myDbackCol.height
+
+    onParentWidthChanged: {
+        if(((myD.x+myD.width)>myD.parentWidth) || (myD.x<0 && (myD.parentWidth-myD.width>myD.x)))
+            myD.x=myD.parentWidth-myD.width
+    }
+    onParentHeightChanged: {
+        if(((myD.y+myD.height)>myD.parentHeight) || (myD.y<0 && (myD.parentHeight-myD.height>myD.y)))
+            myD.y=myD.parentHeight-myD.height
+    }
 }

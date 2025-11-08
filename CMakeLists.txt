@@ -45,6 +45,10 @@ qt_add_qml_module(appAppHub
         QML_FILES Controls/MyRangeSlider.qml
         QML_FILES DialogComponents/MyDialog.qml
         QML_FILES Controls/MyMessageDialog.qml
+        QML_FILES KoledarComponents/KolChangeButton.qml
+        QML_FILES KoledarComponents/KolDataPanel.qml
+        QML_FILES KoledarComponents/KolDataBar.qml
+        QML_FILES KoledarComponents/KolDay.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
