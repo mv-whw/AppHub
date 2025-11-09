@@ -4,7 +4,7 @@ MyRectangle{
     id: kolPanel
     property bool btnHovered: false
     property alias valueText: kolPanelData.text
-    height: 48
+    height: MyTheme.controlCommon.controlHeight
     color: "white"
     borderWidth: MyTheme.controlCommon.controlBorderWidth
     borderColor: (kolPanel.btnHovered || kolPanelMouse.isHovered)? Qt.lighter(MyTheme.controlCommon.controlColor,MyTheme.button.clickHoverRatio):"black"

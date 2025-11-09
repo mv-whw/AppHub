@@ -6,7 +6,7 @@ MyRectangle {
     readonly property alias isHovered: changeDataMouse.isHovered
     signal clickedOn()
     width: 50
-    height: 48
+    height: MyTheme.controlCommon.controlHeight
     color: changeDataMouse.pressed? Qt.darker(MyTheme.controlCommon.controlColor,MyTheme.button.clickHoverRatio):(changeDataMouse.isHovered? Qt.lighter(MyTheme.controlCommon.controlColor,MyTheme.button.clickHoverRatio):MyTheme.controlCommon.controlColor)
 
     topRightRadius: changeDataBtn.isBackButton? 0.0:MyTheme.controlCommon.controlRadius
