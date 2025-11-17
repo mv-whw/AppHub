@@ -11,7 +11,7 @@ MyRectangle{
 
     MyLabel{
         id: kolPanelData
-        text: ""
+        text: "1"
         isBold: true
         fontSize: MyTheme.controlCommon.fontSize+2
         anchors.centerIn: parent

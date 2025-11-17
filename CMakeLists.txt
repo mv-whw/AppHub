@@ -8,7 +8,7 @@ find_package(Qt6 REQUIRED COMPONENTS Quick Svg)
 
 qt_standard_project_setup(REQUIRES 6.10)
 
-set_source_files_properties(MyTheme.qml PROPERTIES QT_QML_SINGLETON_TYPE ON)
+set_source_files_properties(MyTheme.qml SystemAppInfo.qml PROPERTIES QT_QML_SINGLETON_TYPE ON)
 
 qt_add_executable(appAppHub
     main.cpp
@@ -49,6 +49,11 @@ qt_add_qml_module(appAppHub
         QML_FILES KoledarComponents/KolDataPanel.qml
         QML_FILES KoledarComponents/KolDataBar.qml
         QML_FILES KoledarComponents/KolDay.qml
+        QML_FILES KoledarComponents/KolMonth.qml
+        QML_FILES SystemAppInfo.qml
+        QML_FILES BasicComponents/MyDropArea.qml
+        QML_FILES
+        QML_FILES KoledarComponents/KolMonthView.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

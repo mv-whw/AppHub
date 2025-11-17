@@ -2,9 +2,31 @@ import QtQuick
 
 Row {
     id: kolDataBar
+    property bool isYearBar: false
+    signal overflow(lastYear:bool)
     property alias valueText: kolDataBarPanel.valueText
-    property int value: isNaN(kolDataBar.valueText)? 0: parseInt(kolDataBar.valueText)
-    KolChangeButton{id: kolDataBarBtn;isBackButton: true}
+    readonly property int value: parseInt(kolDataBar.valueText)
+    KolChangeButton{id: kolDataBarBtn;isBackButton: true;
+        onClickedOn: {
+            if(!kolDataBar.isYearBar && kolDataBar.value===1)
+            {
+                kolDataBar.overflow(true)
+                kolDataBar.valueText=12
+            }
+            else
+                kolDataBar.valueText=kolDataBar.value-1
+        }
+    }
     KolDataPanel{id: kolDataBarPanel; width: parent.width-2*kolDataBarBtn.width}
-    KolChangeButton{}
+    KolChangeButton{
+        onClickedOn: {
+            if(!kolDataBar.isYearBar && kolDataBar.value===12)
+            {
+                kolDataBar.overflow(false)
+                kolDataBar.valueText=1
+            }
+            else
+                kolDataBar.valueText=kolDataBar.value+1
+        }
+    }
 }
