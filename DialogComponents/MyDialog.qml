@@ -3,6 +3,9 @@ import QtQuick.Controls.Basic
 import AppHub
 Popup {
     id: myD
+    closePolicy: Popup.NoAutoClose
+    modal: true
+    Overlay.modal: Rectangle{color: Qt.rgba(0.3,0.3,0.3,0.8)}
 
     property alias dialogType: myDHeaderIcon.iconType
     property alias dialogTitleText: myDHeaderLabel.text

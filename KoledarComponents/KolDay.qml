@@ -4,7 +4,7 @@ MyRectangle {
     id: kolDay
     property alias value: kolDayLabel.text
     property color eventColor: Qt.lighter(MyTheme.controlCommon.controlColor,1.5)
-    property color colorWithoutEvent: "white"
+    property color colorWithoutEvent: "transparent"
     readonly property bool isNumber: kolDayLabel.text!=="" && !isNaN(kolDayLabel.text)
     readonly property bool isHovered: (kolDay.isNumber && kolDayMouse.isHovered)
     property bool deSelectWithClick: true//false

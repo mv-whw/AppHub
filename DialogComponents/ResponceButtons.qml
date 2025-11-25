@@ -4,6 +4,7 @@ import AppHub
 //import "../"
 Row {
     id: myResponceRow
+    spacing: 5
     signal clickedOn(btn:string)
 
     property alias isYesVisible: yesBtn.visible
