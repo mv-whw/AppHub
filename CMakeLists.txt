@@ -56,6 +56,9 @@ qt_add_qml_module(appAppHub
         QML_FILES KoledarComponents/KolMonthView.qml
         QML_FILES KoledarComponents/KolWeekView.qml
         QML_FILES Controls/MyDayPicker.qml
+        QML_FILES KoledarComponents/KolTime.qml
+        QML_FILES Controls/MyUpDown.qml
+        QML_FILES Controls/MyTimePicker.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

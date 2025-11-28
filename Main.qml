@@ -9,7 +9,8 @@ Window {
     title: qsTr("Hello World")
 
     Column{
-        MyButton{text: "test"; onClicked:dd.open()}
+        MyButton{text: "test"; onClicked:ddd.open()}
+        //KolTime{Component.onCompleted: {setTimeUsingTimeString(getCurrentTimeString())}}
         /*MySwitch{checked: false}
         MySwitch{checked: true}
         MySlider{from: 0; to: 100; value: 20; width: 300; stepSize: 2}
@@ -22,5 +23,6 @@ Window {
     }
     MyMessageDialog{id: d;dialogTitleText: "testna"; dialogType: "info";messageText: "to je moj testing tekst ki se se mora preh dhio hida"; width: 200;isOkVisible: true}
     MyDayPicker{id: dd}
+    MyTimePicker{id: ddd}
 
 }

@@ -7,7 +7,6 @@ MyDialog {
     dialogTitleText: qsTr("choose day")
     signal selectionChanged(day:int, month:int, year:int)
     width: myDayPickerView.width+20
-    height: myDayPicker.headerHeight+myDayPickerView.height+myDayPicker.footerHeight+30
     KolMonthView{
         id: myDayPickerView
         onHeightChanged: parent.height=myDayPickerView.height
