@@ -62,11 +62,23 @@ Column {
         }
 
         Component.onCompleted: {
-            let cDate=new Date()
-            mesec.overflowHappend=true
-            leto.valueText=cDate.getFullYear()
-            mesec.valueText=cDate.getMonth()+1
-            monthView.addSelection(cDate.getDate())
+            myKolMonthViewWhole.selectCurrentDay()
         }
+    }
+    function selectCurrentDay()
+    {
+        let cDate=new Date()
+        mesec.overflowHappend=true
+        leto.valueText=cDate.getFullYear()
+        mesec.valueText=cDate.getMonth()+1
+        monthView.addSelection(cDate.getDate())
+    }
+
+    function openWithCustomData(year: int, month: int, day:int):void
+    {
+        mesec.overflowHappend=true
+        leto.valueText=year
+        mesec.valueText=month
+        monthView.addSelection(day)
     }
 }

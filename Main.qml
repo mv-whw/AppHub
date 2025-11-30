@@ -9,7 +9,10 @@ Window {
     title: qsTr("Hello World")
 
     Column{
-        MyButton{text: "test"; onClicked:ddd.open()}
+        MyButton{text: "open"; onClicked:dd.open()}
+        MyButton{text: "costum d"; onClicked:dd.openWithSelectedCostumDayStamp(2025,10,5)}
+        MyButton{text: "today"; onClicked:dd.openWithSelectedCurrentDay()}
+
         //KolTime{Component.onCompleted: {setTimeUsingTimeString(getCurrentTimeString())}}
         /*MySwitch{checked: false}
         MySwitch{checked: true}

@@ -19,4 +19,16 @@ MyDialog {
                      }
                      myDayPicker.close()
                  }
+
+    function openWithSelectedCurrentDay(): void
+    {
+        myDayPickerView.selectCurrentDay()
+        myDayPicker.open()
+    }
+
+    function openWithSelectedCostumDayStamp(year: int, month: int, day:int):void
+    {
+        myDayPickerView.openWithCustomData(year,month, day)
+        myDayPicker.open()
+    }
 }
