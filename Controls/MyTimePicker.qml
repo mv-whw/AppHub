@@ -9,11 +9,22 @@ MyDialog{
     signal timeSelected(timeString:string)
     KolTime{
         id: timeSelector
+        property bool useCostumTime: false
         onHeightChanged: parent.height=height
     }
 
+    function openWithTimeStamp(timeStamp: string):void
+    {
+        timeSelector.useCostumTime=true
+        timeSelector.setTimeUsingTimeString(timeStamp)
+        myTimePicker.open()
+    }
+
     onOpened: {
-        timeSelector.setTimeUsingTimeString(timeSelector.getCurrentTimeString())
+        if(timeSelector.useCostumTime)
+            timeSelector.useCostumTime=false
+        else
+            timeSelector.setTimeUsingTimeString(timeSelector.getCurrentTimeString())
     }
 
     onClickedOn:(btn)=> {
