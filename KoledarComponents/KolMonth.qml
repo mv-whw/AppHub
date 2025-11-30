@@ -8,6 +8,7 @@ Grid {
     property var kolDaysNumber: []
     readonly property int startDayInMonthNameId: SystemAppInfo.startWeekWithSunday? -1:0
     property int selectedDay: -1
+    property bool enableDeselectingByClick: false
     signal dataChange()
     columns: 7
 
@@ -175,7 +176,7 @@ Grid {
         }
 
         for(let k=1;k<32;k++)
-            kolDaysNumber.push(Qt.createQmlObject('KolDay{value:"'+k+'"; width:'+myKolMonthView.width/7+';height:'+myKolMonthView.width/7+';onSelected:{myKolMonthView.selectedDay=value;}}',myKolMonthView,'dayNames'))
+            kolDaysNumber.push(Qt.createQmlObject('KolDay{value:"'+k+'"; width:'+myKolMonthView.width/7+';height:'+myKolMonthView.width/7+';deSelectWithClick:' +myKolMonthView.enableDeselectingByClick+';onSelected:{myKolMonthView.selectedDay=value;}}',myKolMonthView,'dayNames'))
     }
 
 

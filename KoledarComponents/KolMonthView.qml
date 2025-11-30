@@ -7,6 +7,7 @@ Column {
     property int selectedMonth: -1
     property int selectedYear: -1
     property int selectedDay: -1
+    property bool enableDeSelectingByClick: false
 
     KolDataBar{
         id: leto
@@ -35,6 +36,7 @@ Column {
     }
     KolMonth{
         id: monthView
+        enableDeselectingByClick: myKolMonthViewWhole.enableDeSelectingByClick
         width: parent.width
         onSelectedDayChanged: {
             if(monthView.selectedDay!==-1)

@@ -32,7 +32,9 @@ Popup {
 
     background: MyRectangle{
         radius: MyTheme.controlCommon.controlRadius
-        color: "lightblue"
+        color: Qt.lighter("lightblue",MyTheme.button.clickHoverRatio)
+        borderWidth: MyTheme.controlCommon.controlBorderWidth
+        borderColor: MyTheme.button.backgroundColor
 
         Column{
             id: myDbackCol
@@ -56,6 +58,7 @@ Popup {
                     id: myDHeaderLabel
                     x: myDHeaderIcon.visible? myDHeaderIcon.x+myDHeaderIcon.width+10:MyTheme.controlCommon.controlRadius
                     color: "white"
+                    isBold: true
                     anchors.verticalCenter: parent.verticalCenter
                     elide: MyLabel.ElideRight
                     width: parent.width-(MyTheme.controlCommon.controlRadius*2)-(myDHeaderIcon.visible? 10+myDHeaderIcon.width:0)
