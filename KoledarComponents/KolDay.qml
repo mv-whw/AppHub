@@ -12,6 +12,7 @@ MyRectangle {
     property bool isCurrentDay: false
     property bool hasEvent: false
     signal selected()
+    signal deselected()
     onIsSelectedChanged: {
         if(kolDay.isSelected)
             kolDay.selected()
@@ -37,7 +38,10 @@ MyRectangle {
                     kolDay.isSelected=true
                 else
                     if(kolDay.deSelectWithClick)
+                    {
+                        kolDay.deselected()
                         kolDay.isSelected=false
+                    }
             }
         }
     }

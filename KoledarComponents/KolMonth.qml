@@ -176,7 +176,7 @@ Grid {
         }
 
         for(let k=1;k<32;k++)
-            kolDaysNumber.push(Qt.createQmlObject('KolDay{value:"'+k+'"; width:'+myKolMonthView.width/7+';height:'+myKolMonthView.width/7+';deSelectWithClick:' +myKolMonthView.enableDeselectingByClick+';onSelected:{myKolMonthView.selectedDay=value;}}',myKolMonthView,'dayNames'))
+            kolDaysNumber.push(Qt.createQmlObject('KolDay{value:"'+k+'"; width:'+myKolMonthView.width/7+';height:'+myKolMonthView.width/7+';deSelectWithClick:' +myKolMonthView.enableDeselectingByClick+';onSelected:{myKolMonthView.selectedDay=value;}; onDeselected:{myKolMonthView.selectedDay=-1}}',myKolMonthView,'dayNames'))
     }
 
 
