@@ -20,4 +20,6 @@ QtObject {
 
     property bool startWeekWithSunday: false
 
+    property real windowWidth: 640
+    property real windowHeight: 480
 }

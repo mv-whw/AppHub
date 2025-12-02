@@ -2,7 +2,7 @@ import QtQuick
 import "./Controls"
 import "./DialogComponents"
 import "./KoledarComponents"
-Window {
+MyAppWindow {
     width: 640
     height: 480
     visible: true
