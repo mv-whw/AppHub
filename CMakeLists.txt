@@ -60,6 +60,9 @@ qt_add_qml_module(appAppHub
         QML_FILES Controls/MyUpDown.qml
         QML_FILES Controls/MyTimePicker.qml
         QML_FILES Controls/MyAppWindow.qml
+        QML_FILES TabComponents/MyTab.qml
+        QML_FILES TabComponents/MyClasicTab.qml
+        QML_FILES TabComponents/CloseButton.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
