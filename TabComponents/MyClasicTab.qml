@@ -3,6 +3,8 @@ import AppHub
 MyTab {
     id: myClasicTab
     property bool isHorizontalType: true
+    height: MyTheme.controlCommon.controlHeight
+    width: myClasicTab.isHorizontalType? MyTheme.tabs.clasicTabHorMinWidth:parent.width
 
     MyIcon{
         id: normalTabIcon
@@ -27,6 +29,13 @@ MyTab {
     MyMouseArea{
         id: normalTabMouse
         anchors.fill: parent
+        onClicked: {
+            if(!myClasicTab.isSelected)
+            {
+                myClasicTab.clickedOn(myClasicTab.tabOwner, myClasicTab.tabTitle)
+                myClasicTab.isSelected=true
+            }
+        }
     }
 
     CloseButton{
@@ -34,5 +43,8 @@ MyTab {
         x: myClasicTab.width-width-10
         anchors.verticalCenter: parent.verticalCenter
         visible: ((myClasicTab.isSelected || normalTabCloseBtn.isHovered || normalTabMouse.isHovered) && myClasicTab.allowTabClosing)
+        onClickedOn:{
+            myClasicTab.closeMe(myClasicTab.tabOwner, myClasicTab.tabTitle)
+        }
     }
 }

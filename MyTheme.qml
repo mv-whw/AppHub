@@ -7,4 +7,5 @@ QtObject {
     property MyButtonTheme button: MyButtonTheme{}
     property MyTextFieldAreaTheme textFieldArea: MyTextFieldAreaTheme{}
     property MyFrameGroupBoxTheme frameGroupBox: MyFrameGroupBoxTheme{}
+    property MyTabTheme tabs: MyTabTheme{}
 }

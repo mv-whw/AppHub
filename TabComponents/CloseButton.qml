@@ -4,7 +4,7 @@ MyRectangle {
     height: parent.height*0.8
     width: height
     readonly property alias isHovered: closeBtnMouse.isHovered
-    signal closeMe()
+    signal clickedOn()
 
     color:"transparent"
     borderWidth: closeBtnMouse.isHovered? MyTheme.controlCommon.controlBorderWidth:0.0
@@ -55,6 +55,6 @@ MyRectangle {
             }
         }
 
-        onClicked: parent.closeMe()
+        onClicked: parent.clickedOn()
     }
 }
