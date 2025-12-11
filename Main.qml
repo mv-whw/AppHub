@@ -2,17 +2,25 @@ import QtQuick
 import "./Controls"
 import "./DialogComponents"
 import "./KoledarComponents"
+import "./TabComponents"
 MyAppWindow {
     width: 640
     height: 480
     visible: true
     title: qsTr("Hello World")
 
-    Column{
-        MyButton{text: "open"; onClicked:dd.open()}
-        MyButton{text: "costum d"; onClicked:dd.openWithSelectedCostumDayStamp(2025,10,5)}
-        MyButton{text: "today"; onClicked:dd.openWithSelectedCurrentDay()}
 
+    Item{
+        //spacing: 3
+        anchors.centerIn: parent
+        width: 100
+        height: 480
+        // MyButton{text: "open"; onClicked:dd.open()}
+        // MyButton{text: "costum d"; onClicked:dd.openWithSelectedCostumDayStamp(2025,10,5)}
+        // MyButton{text: "today"; onClicked:dd.openWithSelectedCurrentDay()}
+
+        MyRotatedTab{tabTitle: "IIIItestni r tab long text jeIIII";isOnRightSide: true; anchors.right: parent.right}
+        MyRotatedTab{tabTitle: "IIIItestni r tab long text jeIIII"; isOnRightSide: false; anchors.left: parent.left}
         //KolTime{Component.onCompleted: {setTimeUsingTimeString(getCurrentTimeString())}}
         /*MySwitch{checked: false}
         MySwitch{checked: true}

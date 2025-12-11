@@ -3,8 +3,11 @@ import AppHub
 MyTab {
     id: myClasicTab
     property bool isHorizontalType: true
+    readonly property bool isHovered: normalTabMouse.isHovered || normalTabCloseBtn.isHovered
     height: MyTheme.controlCommon.controlHeight
     width: myClasicTab.isHorizontalType? MyTheme.tabs.clasicTabHorMinWidth:parent.width
+
+    color: myClasicTab.isSelected? Qt.darker(MyTheme.button.backgroundColor,MyTheme.button.clickHoverRatio): (myClasicTab.isHovered? Qt.lighter(MyTheme.button.backgroundColor,MyTheme.button.clickHoverRatio):MyTheme.button.backgroundColor)
 
     MyIcon{
         id: normalTabIcon
@@ -28,11 +31,10 @@ MyTab {
 
     MyMouseArea{
         id: normalTabMouse
-        anchors.fill: parent
         onClicked: {
             if(!myClasicTab.isSelected)
             {
-                myClasicTab.clickedOn(myClasicTab.tabOwner, myClasicTab.tabTitle)
+                myClasicTab.clickedOn(myClasicTab.tabOwner,myClasicTab.mAppName, myClasicTab.tabTitle)
                 myClasicTab.isSelected=true
             }
         }
@@ -44,7 +46,7 @@ MyTab {
         anchors.verticalCenter: parent.verticalCenter
         visible: ((myClasicTab.isSelected || normalTabCloseBtn.isHovered || normalTabMouse.isHovered) && myClasicTab.allowTabClosing)
         onClickedOn:{
-            myClasicTab.closeMe(myClasicTab.tabOwner, myClasicTab.tabTitle)
+            myClasicTab.closeMe(myClasicTab.tabOwner,myClasicTab.mAppName, myClasicTab.tabTitle)
         }
     }
 }

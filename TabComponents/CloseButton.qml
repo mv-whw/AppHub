@@ -41,7 +41,6 @@ MyRectangle {
 
     MyMouseArea{
         id: closeBtnMouse
-        anchors.fill: parent
         onIsHoveredChanged: {
             if(closeBtnMouse.isHovered)
             {
