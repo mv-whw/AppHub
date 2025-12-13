@@ -3,6 +3,7 @@ import "./Controls"
 import "./DialogComponents"
 import "./KoledarComponents"
 import "./TabComponents"
+import AppHub
 MyAppWindow {
     width: 640
     height: 480

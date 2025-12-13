@@ -10,7 +10,7 @@ MyTab {
     bottomRightRadius: !myRotatedTab.isOnRightSide? MyTheme.controlCommon.controlRadius:0.0
     topRightRadius:  !myRotatedTab.isOnRightSide? MyTheme.controlCommon.controlRadius:0.0
     width: MyTheme.controlCommon.controlHeight
-    height: 300
+    height: 150
     color: myRotatedTab.isSelected? Qt.darker(MyTheme.button.backgroundColor,MyTheme.button.clickHoverRatio): (myRotatedTab.isHovered? Qt.lighter(MyTheme.button.backgroundColor,MyTheme.button.clickHoverRatio):MyTheme.button.backgroundColor)
 
 
