@@ -6,27 +6,21 @@ Item {
     property alias colorizationColor: myIconEffect.colorizationColor
     property alias sourceLocation: myIconImage.source
     readonly property alias isLoaded: myIconImage.isLoaded
+    property real ratio: 1.0
+    property alias useSourceSize: myIconImage.useSourceSize
+    readonly property alias originalSize: myIconImage.sourceSize
+    property alias preferedHeight: myIconImage.preferedHeight
     visible: myIcon.isLoaded
-
-    onWidthChanged: {
-        if(myIcon.width!==myIconImage.width)
-            myIconImage.width=myIcon.width
-    }
-    onHeightChanged: {
-        if(myIcon.height!==myIconImage.height)
-            myIconImage.height=myIcon.height
-    }
 
     MyImage{
         id: myIconImage
         visible: parent.colorization===0.0
+        ratio: myIcon.ratio
         onWidthChanged: {
-            if(myIcon.width!==myIconImage.width)
-                myIcon.width=myIconImage.width
+            myIcon.width=myIconImage.width
         }
         onHeightChanged: {
-            if(myIcon.height!==myIconImage.height)
-                myIcon.height=myIconImage.height
+            myIcon.height=myIconImage.height
         }
     }
     MultiEffect{
@@ -34,5 +28,14 @@ Item {
         visible: parent.colorization!==0.0
         source: myIconImage
         anchors.fill: parent
+    }
+
+    onIsLoadedChanged: {
+        if(myIcon.isLoaded)
+        {
+            myIconImage.height=myIcon.preferedHeight
+            myIconImage.width=myIcon.preferedHeight
+            myIcon.height=myIconImage.height
+        }
     }
 }

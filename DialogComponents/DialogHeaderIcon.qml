@@ -1,5 +1,5 @@
 import QtQuick
-//import AppHub
+import AppHub
 import "../"
 import "../BasicComponents"
 MyIcon {
@@ -17,20 +17,23 @@ MyIcon {
         case "error":
             dialogIconAnimation.startColor=Qt.lighter("orange",1.2)
             dialogIconAnimation.endColor="orange"
-            myDialogIcon.sourceLocation="qrc:/qt/qml/AppHub/Icons/error.svg"
+            myDialogIcon.sourceLocation=MyIconType.getIconPath("error")
+            dialogIconAnimation.start()
             break
         case "question":
             myDialogIcon.colorizationColor="white"
-            myDialogIcon.sourceLocation="qrc:/qt/qml/AppHub/Icons/help.svg"
+            myDialogIcon.sourceLocation=MyIconType.getIconPath("help")
             break
         case "warning":
 
             dialogIconAnimation.startColor=Qt.lighter("yellow",1.2)
             dialogIconAnimation.endColor=Qt.darker("yellow",1.2)
-            myDialogIcon.sourceLocation="qrc:/qt/qml/AppHub/Icons/warning.svg"
+            myDialogIcon.sourceLocation=MyIconType.getIconPath("warning")
+            dialogIconAnimation.start()
             break
         case "info":
-            myDialogIcon.sourceLocation="qrc:/qt/qml/AppHub/Icons/info.svg"
+            myDialogIcon.colorizationColor="white"
+            myDialogIcon.sourceLocation=MyIconType.getIconPath("info")
             break
         default:
             myDialogIcon.sourceLocation=""
@@ -60,17 +63,17 @@ MyIcon {
     }
 
     onIsLoadedChanged: {
-        if(myDialogIcon.isLoaded)
-            switch(myDialogIcon.iconType)
-            {
-            case "error":
-            case "warning":
-                dialogIconAnimation.start()
-                break
-            default:
-                if(dialogIconAnimation.running)
-                    dialogIconAnimation.stop()
-                myDialogIcon.colorizationColor="white"
-            }
+
+        switch(myDialogIcon.iconType)
+        {
+        case "error":
+        case "warning":
+            dialogIconAnimation.start()
+            break
+        default:
+            if(dialogIconAnimation.running)
+                dialogIconAnimation.stop()
+            myDialogIcon.colorizationColor="white"
+        }
     }
 }

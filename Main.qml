@@ -3,6 +3,7 @@ import "./Controls"
 import "./DialogComponents"
 import "./KoledarComponents"
 import "./TabComponents"
+import "./BasicComponents"
 import AppHub
 MyAppWindow {
     width: 640
@@ -11,17 +12,20 @@ MyAppWindow {
     title: qsTr("Hello World")
 
 
-    Item{
+    Column{
         //spacing: 3
         anchors.centerIn: parent
         width: 100
         height: 480
-        // MyButton{text: "open"; onClicked:dd.open()}
+        MyButton{text: "warning"; onClicked:{d.dialogType="warning"; d.open()}}
+        //MyButton{text: "info"; onClicked: {d.dialogType="info"; d.open()}}
+        //MyButton{text: "errror"; onClicked: {d.dialogType="error"; d.open()}}
+        //MyButton{text: "question"; onClicked: {d.dialogType="question"; d.open()}}
         // MyButton{text: "costum d"; onClicked:dd.openWithSelectedCostumDayStamp(2025,10,5)}
         // MyButton{text: "today"; onClicked:dd.openWithSelectedCurrentDay()}
 
-        MyRotatedTab{tabTitle: "IIIItestni r tab long text jeIIII";isOnRightSide: true; anchors.right: parent.right}
-        MyRotatedTab{tabTitle: "IIIItestni r tab long text jeIIII"; isOnRightSide: false; anchors.left: parent.left}
+        //MyRotatedTab{tabTitle: "IIIItestni r tab long text jeIIII";isOnRightSide: true; anchors.right: parent.right}
+        //MyRotatedTab{tabTitle: "IIIItestni r tab long text jeIIII"; isOnRightSide: false; anchors.left: parent.left}
         //KolTime{Component.onCompleted: {setTimeUsingTimeString(getCurrentTimeString())}}
         /*MySwitch{checked: false}
         MySwitch{checked: true}
@@ -37,4 +41,15 @@ MyAppWindow {
     MyDayPicker{id: dd}
     MyTimePicker{id: ddd}
 
+    MyIcon{
+        sourceLocation: MyIconType.getIconPath("upload")
+        colorizationColor: "black"
+        colorization: 1.0
+        preferedHeight: 50
+    }
+
+
+    // Component.onCompleted: {
+    //     console.log(MyIconType.getAllNames())
+    // }
 }
