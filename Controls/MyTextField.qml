@@ -50,7 +50,7 @@ Row {
         bottomRightRadius: MyTheme.controlCommon.controlRadius
         MyIcon{
             anchors.centerIn: parent
-            height: parent.height*0.8
+            preferedHeight: parent.height*0.8
             sourceLocation: myTextFieldRow.useForPassword? (myTextField.echoMode===TextField.Password? "qrc:/qt/qml/AppHub/Icons/visibility_off.svg":"qrc:/qt/qml/AppHub/Icons/visibility.svg"):"qrc:/qt/qml/AppHub/Icons/delete.svg"
             colorization: 1.0
             colorizationColor: "white"

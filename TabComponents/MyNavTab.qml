@@ -9,7 +9,7 @@ MyTab {
         id: myNavTabIcon
         anchors.horizontalCenter: parent.horizontalCenter
         sourceLocation: myNavTab.tabIcon
-        height: parent.height*0.65
+        preferedHeight: parent.height*0.65
         colorization: 1.0
         colorizationColor: "white"
         y: 10

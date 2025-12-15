@@ -34,11 +34,16 @@ MyTab {
     MyMouseArea{
         id: myRotatedTabMouse
         onClicked: {
-            if(!myRotatedTab.isSelected)
+            if(myRotatedTab.isSelected)
+            {
+                myRotatedTab.isSelected=false
+                myRotatedTab.closeMe(myRotatedTab.tabOwner,myRotatedTab.mAppName,myRotatedTab.tabTitle)
+            }else
             {
                 myRotatedTab.isSelected=true
                 myRotatedTab.clickedOn(myRotatedTab.tabOwner,myRotatedTab.mAppName,myRotatedTab.tabTitle)
             }
+
         }
     }
 }

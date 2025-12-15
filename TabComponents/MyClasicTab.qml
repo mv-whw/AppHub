@@ -14,7 +14,7 @@ MyTab {
         sourceLocation: myClasicTab.tabIcon
         colorization: 1.0
         colorizationColor: "white"
-        height: myClasicTab.height/10*8
+        preferedHeight: myClasicTab.height/10*8
         anchors.verticalCenter: parent.verticalCenter
         x: 10
     }
