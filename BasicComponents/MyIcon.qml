@@ -6,7 +6,7 @@ Item {
     property alias colorizationColor: myIconEffect.colorizationColor
     property alias sourceLocation: myIconImage.source
     readonly property alias isLoaded: myIconImage.isLoaded
-    property real ratio: 1.0
+    property alias ratio: myIconImage.ratio
     property alias useSourceSize: myIconImage.useSourceSize
     readonly property alias originalSize: myIconImage.sourceSize
     property alias preferedHeight: myIconImage.preferedHeight
@@ -15,7 +15,7 @@ Item {
     MyImage{
         id: myIconImage
         visible: parent.colorization===0.0
-        ratio: myIcon.ratio
+
         onWidthChanged: {
             myIcon.width=myIconImage.width
         }

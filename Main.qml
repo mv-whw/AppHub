@@ -17,6 +17,7 @@ MyAppWindow {
         anchors.centerIn: parent
         width: 100
         height: 480
+        MyChooseButton{width: 200; height: 200;title:"testna"; iconSource: MyIconType.getIconPath("test")}
         MyButton{text: "warning"; onClicked:{d.dialogType="warning"; d.open()}}
         //MyButton{text: "info"; onClicked: {d.dialogType="info"; d.open()}}
         //MyButton{text: "errror"; onClicked: {d.dialogType="error"; d.open()}}
