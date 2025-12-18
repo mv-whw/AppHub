@@ -8,7 +8,7 @@ ApplicationWindow {
     onWidthChanged: SystemAppInfo.windowWidth=myAppWindow.width
 
     background: MyRectangle{
-        color: SystemAppInfo.useDarkMode? "black":Qt.darker("white",1.2)//Qt.lighter("lightblue",MyTheme.button.clickHoverRatio)
+        color: SystemAppInfo.useDarkMode? Qt.lighter("black",1.2):Qt.darker("white",1.2)//Qt.lighter("lightblue",MyTheme.button.clickHoverRatio)
     }
 
     Component.onCompleted: {
