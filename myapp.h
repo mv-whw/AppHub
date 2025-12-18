@@ -17,6 +17,7 @@ public:
     Q_INVOKABLE bool loginUser();
     Q_INVOKABLE bool registerAndLoginUser();
 signals:
+
 };
 
 #endif // MYAPP_H
