@@ -17,8 +17,14 @@ MyAppWindow {
         anchors.centerIn: parent
         width: 100
         height: 480
-        MyChooseButton{width: 200; height: 200;title:"testna"; iconSource: MyIconType.getIconPath("test")}
+        //MyChooseButton{width: 200; height: 200;title:"testna"; iconSource: MyIconType.getIconPath("test")}
         MyButton{text: "warning"; onClicked:{d.dialogType="warning"; d.open()}}
+        MyButton{text: "OC busyInd"; onClicked:{
+                if(p.visible)
+                    p.close()
+                else
+                    p.open()
+            }}
         //MyButton{text: "info"; onClicked: {d.dialogType="info"; d.open()}}
         //MyButton{text: "errror"; onClicked: {d.dialogType="error"; d.open()}}
         //MyButton{text: "question"; onClicked: {d.dialogType="question"; d.open()}}
@@ -42,12 +48,14 @@ MyAppWindow {
     MyDayPicker{id: dd}
     MyTimePicker{id: ddd}
 
-    MyIcon{
-        sourceLocation: MyIconType.getIconPath("upload")
-        colorizationColor: "black"
-        colorization: 1.0
-        preferedHeight: 50
-    }
+    MyBusyIndicator{id:p;anchors.centerIn: parent}
+
+    // MyIcon{
+    //     sourceLocation: MyIconType.getIconPath("upload")
+    //     colorizationColor: "black"
+    //     colorization: 1.0
+    //     preferedHeight: 50
+    // }
 
 
     // Component.onCompleted: {

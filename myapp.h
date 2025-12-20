@@ -14,8 +14,6 @@ public:
     explicit MyApp(QObject *parent = nullptr);
     Q_INVOKABLE QString returnAppName();
     Q_INVOKABLE QString returnAppVersion();
-    Q_INVOKABLE bool loginUser();
-    Q_INVOKABLE bool registerAndLoginUser();
 signals:
 
 };
