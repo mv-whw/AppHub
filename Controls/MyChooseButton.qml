@@ -10,6 +10,8 @@ MyRectangle {
     borderColor: MyTheme.button.backgroundColor
     color: MyTheme.button.backgroundColor
 
+    onHeightChanged: myChooseButtonIcon.preferedHeight=myChooseButton.height*0.5
+
     MyIcon{
         id: myChooseButtonIcon
         property real animRatio: 1.0

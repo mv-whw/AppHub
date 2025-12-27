@@ -8,6 +8,10 @@ Image {
     readonly property bool useSourceSize: myImage.ratio===1.0
     property real ratio: 5.0
     property real preferedHeight: 50
+    onPreferedHeightChanged: {
+        myImage.ratio=myImage.preferedHeight/myImage.sourceSize.height
+    }
+
     onIsLoadedChanged: {
         if(myImage.isLoaded)
         {

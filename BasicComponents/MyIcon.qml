@@ -34,7 +34,7 @@ Item {
         if(myIcon.isLoaded)
         {
             myIconImage.height=myIcon.preferedHeight
-            myIconImage.width=myIcon.preferedHeight
+            myIconImage.width=myIcon.width
             myIcon.height=myIconImage.height
         }
     }

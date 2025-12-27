@@ -15,16 +15,20 @@ MyAppWindow {
     Column{
         //spacing: 3
         anchors.centerIn: parent
-        width: 100
+        width: 400
         height: 480
+        //MySelectionCard{width: 120;height: 120; title: "test"; iconSource: MyIconType.getIconPath("test")}
+        MyChooseCardsView{
+            width: parent.width
+            height: parent.height
+            Component.onCompleted: {
+                addComponentToView("test",MyIconType.getIconPath("test"),true)
+            }
+        }
         //MyChooseButton{width: 200; height: 200;title:"testna"; iconSource: MyIconType.getIconPath("test")}
-        MyButton{text: "warning"; onClicked:{d.dialogType="warning"; d.open()}}
-        MyButton{text: "OC busyInd"; onClicked:{
-                if(p.visible)
-                    p.close()
-                else
-                    p.open()
-            }}
+        //MyButton{text: "warning"; onClicked:{d.dialogType="warning"; d.open()}}
+
+
         //MyButton{text: "info"; onClicked: {d.dialogType="info"; d.open()}}
         //MyButton{text: "errror"; onClicked: {d.dialogType="error"; d.open()}}
         //MyButton{text: "question"; onClicked: {d.dialogType="question"; d.open()}}
@@ -44,11 +48,16 @@ MyAppWindow {
         // }
 
     }
+    // MyChooseButton{width: 120;height: 120; title: "test"; iconSource: MyIconType.getIconPath("test")}
+    // MyChooseCardsView{
+    //     width: parent.width
+    //     height: parent.height
+    //     Component.onCompleted: {
+    //         addComponentToView("test",MyIconType.getIconPath("test"),true)
+    //     }
+    // }
     MyMessageDialog{id: d;dialogTitleText: "testna"; dialogType: "info";messageText: "to je moj testing tekst ki se se mora preh dhio hida"; width: 200;isOkVisible: true}
-    MyDayPicker{id: dd}
-    MyTimePicker{id: ddd}
 
-    MyBusyIndicator{id:p;anchors.centerIn: parent}
 
     // MyIcon{
     //     sourceLocation: MyIconType.getIconPath("upload")

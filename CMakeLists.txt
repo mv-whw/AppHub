@@ -77,6 +77,8 @@ qt_add_qml_module(appAppHub
         SOURCES myapp.h myapp.cpp
         SOURCES myrestservice.h myrestservice.cpp
         QML_FILES Controls/MyBusyIndicator.qml
+        QML_FILES Controls/MySelectionCard.qml
+        QML_FILES Views/MyLoginView.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
