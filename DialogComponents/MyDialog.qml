@@ -30,6 +30,20 @@ Popup {
     spacing: 0.0
     padding: 0.0
 
+    onDialogTypeChanged:{
+        switch(myD.dialogType){
+        case "question":
+            resBtn.isOkVisible=false
+            resBtn.isYesVisible=true
+            resBtn.isNoVisible=true
+            break
+        default:
+            resBtn.isOkVisible=true
+            resBtn.isYesVisible=false
+            resBtn.isNoVisible=false
+        }
+    }
+
     background: MyRectangle{
         radius: MyTheme.controlCommon.controlRadius
         color: Qt.lighter("lightblue",MyTheme.button.clickHoverRatio)
