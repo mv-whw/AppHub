@@ -1,11 +1,19 @@
 import QtQuick
 import AppHub
 Column {
+    id: myRegView
     property var elements: []
 
     function createElements()
     {
+        let n=myRegView.children.length
+        if(n!==0)
+            for(n;n!==0;n--)
+                myRegView.children[(n-1)].destroy()
+        for(let i=0;i<elements.length;i++)
+        {
 
+        }
     }
 
     Component{

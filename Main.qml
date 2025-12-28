@@ -23,8 +23,10 @@ MyAppWindow {
             height: parent.height
             Component.onCompleted: {
                 addComponentToView("test",MyIconType.getIconPath("test"),true)
+                addComponentToView("upload",MyIconType.getIconPath("upload"),true)
             }
         }
+
         //MyChooseButton{width: 200; height: 200;title:"testna"; iconSource: MyIconType.getIconPath("test")}
         //MyButton{text: "warning"; onClicked:{d.dialogType="warning"; d.open()}}
 
