@@ -10,8 +10,10 @@ Column {
         if(n!==0)
             for(n;n!==0;n--)
                 myRegView.children[(n-1)].destroy()
+        let elem;
         for(let i=0;i<elements.length;i++)
         {
+            elem=elements[i].split(':')
 
         }
     }
